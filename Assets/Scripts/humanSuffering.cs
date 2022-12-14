@@ -21,6 +21,8 @@ public class humanSuffering : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+
+            FindObjectOfType<ExplosionEffect>().EnemyDie(this);
         }
     }
 
