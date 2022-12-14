@@ -16,7 +16,7 @@ public class humanSuffering : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // död när rör spelar'n -Fille Dille Karamell
     {
         if (collision.gameObject.tag == "Player")
         {
