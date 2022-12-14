@@ -20,9 +20,9 @@ public class humanSuffering : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,2.5f);
 
-            FindObjectOfType<ExplosionEffect>().EnemyDie(this);
+            FindObjectOfType<ExplosionEffect>().EnemyDie(this); // Skickar signal till ExplosionEffect
         }
     }
 
