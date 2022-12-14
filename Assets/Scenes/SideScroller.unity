@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 1033531485}
   - component: {fileID: 1033531484}
   - component: {fileID: 1033531483}
+  - component: {fileID: 1033531488}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -258,7 +259,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033531482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0783673c13a2f6469d4a526f9b644b7, type: 3}
   m_Name: 
@@ -345,6 +346,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1033531488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033531482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4866386bf928b0b41b8c689c7f725bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.1
 --- !u!1 &1162870841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5255,6 +5269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c10ccdf51d63934e86ac7ac4a92ea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothTime: 0.35
   target: {fileID: 1033531487}
 --- !u!1 &1594100795
 GameObject:
