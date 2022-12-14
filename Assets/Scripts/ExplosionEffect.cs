@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplosionEffect : MonoBehaviour
 {
-    
+    public ParticleSystem particleEffect;
     void Start()
     {
        
@@ -14,6 +14,7 @@ public class ExplosionEffect : MonoBehaviour
     
     public void EnemyDie(humanSuffering enemy)
     {
-        
+        particleEffect.transform.position = enemy.transform.position;
+        particleEffect.Play();
     }
 }
