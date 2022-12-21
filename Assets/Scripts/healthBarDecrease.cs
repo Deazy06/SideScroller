@@ -7,7 +7,7 @@ public class healthBarDecrease : MonoBehaviour
 {
     [SerializeField]
     public Slider timerSlider;
-    public float health ;
+    public float health;
     [SerializeField]
     GameObject player;
 
@@ -41,5 +41,10 @@ public class healthBarDecrease : MonoBehaviour
         {
             timerSlider.value = time;
         }
+    }
+
+    public void healthRise(humanSuffering humanSuffering)
+    {
+        this.health += 3;
     }
 }

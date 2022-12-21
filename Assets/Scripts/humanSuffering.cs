@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class humanSuffering : MonoBehaviour
 {
+
+    [SerializeField]
+    healthBarDecrease health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,9 @@ public class humanSuffering : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject,2.5f);
+
+            FindObjectOfType<healthBarDecrease>().healthRise(this);
+
 
             FindObjectOfType<ExplosionEffect>().EnemyDie(this); // Skickar signal till ExplosionEffect
         }
