@@ -8,6 +8,8 @@ public class healthBarDecrease : MonoBehaviour
     [SerializeField]
     public Slider timerSlider;
     public float health ;
+    [SerializeField]
+    GameObject player;
 
     bool stopTimer;
 
@@ -25,11 +27,14 @@ public class healthBarDecrease : MonoBehaviour
     {
         float time = health - Time.time;
 
-        print(time);
-
         if (time < 0)
         {
             stopTimer = true;
+
+            FindObjectOfType<ExplosionEffectPlayer>().PlayerDie(this);
+
+            Destroy(player, 1.5f);
+
         }
 
         if (stopTimer == false)
