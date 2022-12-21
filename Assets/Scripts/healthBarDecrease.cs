@@ -1,24 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class healthBarDecrease : MonoBehaviour
 {
     [SerializeField]
-    float health = 30f;
-    [SerializeField]
-    Transform timer;
+    public Slider timerSlider;
+    public float health ;
+
+    bool stopTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         
+        bool stopTimer = false;
+        timerSlider.maxValue = health;
+        timerSlider.value = health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        health += Time.deltaTime;
-        
+        float time = health - Time.time;
+
+        print(time);
+
+        if (time < 0)
+        {
+            stopTimer = true;
+        }
+
+        if (stopTimer == false)
+        {
+            timerSlider.value = time;
+        }
     }
 }
