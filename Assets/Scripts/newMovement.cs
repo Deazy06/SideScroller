@@ -9,9 +9,12 @@ public class newMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 position = new Vector2(0f, 0f);
 
+    public bool victory;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        victory = false;
     }
 
     private void Update() //Tar reda på mouseposition och sånt -Filip
@@ -24,6 +27,14 @@ public class newMovement : MonoBehaviour
     private void FixedUpdate() //Rör gubben -Filip
     {
         rb.MovePosition(position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) //Gör så att man kan vinna av att röra ett objekt med taggen mål
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            victory = true;
+        } 
     }
 
 }
